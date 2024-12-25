@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Розрахунок квадратури ямкового ремонту</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+    <h1>Розрахунок квадратури ямкового ремонту</h1>
+    <form onsubmit="addPothole(); return false;">
+        <label>Ширина (м): <input type="number" id="width" step="0.01" required></label>
+        <label>Довжина (м): <input type="number" id="length" step="0.01" required></label>
+        <button type="submit">Додати ямку</button>
+    </form>
+
+    <form onsubmit="insertPothole(); return false;">
+        <label>Індекс: <input type="number" id="index" min="1" required></label>
+        <label>Ширина (м): <input type="number" id="insert-width" step="0.01" required></label>
+        <label>Довжина (м): <input type="number" id="insert-length" step="0.01" required></label>
+        <button type="submit">Вставити ямку</button>
+    </form>
+
+    <form onsubmit="savePotholes(); return false;">
+        <label>Ім'я файлу: <input type="text" id="save-filename" required></label>
+        <button type="submit">Зберегти ямки</button>
+    </form>
+
+    <form onsubmit="loadPotholes(); return false;">
+        <label>Ім'я файлу: <input type="text" id="load-filename" required></label>
+        <button type="submit">Завантажити ямки</button>
+    </form>
+
+    <form onsubmit="exportPotholes(); return false;">
+        <label>Ім'я файлу: <input type="text" id="export-filename" required></label>
+        <button type="submit">Експортувати ямки в Excel</button>
+    </form>
+
+    <form onsubmit="importPotholes(); return false;" enctype="multipart/form-data">
+        <label>Файл Excel: <input type="file" id="import-file" accept=".xls,.xlsx" required></label>
+        <button type="submit">Імпортувати ямки з Excel</button>
+    </form>
+
+    <form onsubmit="generatePDF(); return false;">
+        <label>Ім'я файлу: <input type="text" id="pdf-filename" required></label>
+        <button type="submit">Згенерувати PDF-звіт</button>
+    </form>
+
+    <div id="main-container">
+        <div id="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Ширина (м)</th>
+                        <th>Довжина (м)</th>
+                        <th>Площа (м²)</th>
+                        <th>Дія</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+            </table>
+        </div>
+        <div id="road-container">
+            <canvas id="roadCanvas" width="200" height="800"></canvas>
+        </div>
+    </div>
+
+    <h2>Зведення</h2>
+    <p id="summary"></p>
+</body>
+</html>

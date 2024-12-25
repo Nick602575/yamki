@@ -1,0 +1,113 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+label {
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="number"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 80px; /* Вузький інпут */
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#main-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#table-container {
+    width: 60%;
+    overflow-x: auto; /* Додаємо можливість прокручування */
+}
+
+#road-container {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    table-layout: fixed; /* Встановлюємо фіксовану ширину таблиці */
+}
+
+th, td {
+    padding: 5px; /* Зменшений padding */
+    border: 1px solid #ddd;
+    text-align: center;
+    min-width: 80px; /* Встановлюємо мінімальну ширину колонок */
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 14px; /* Зменшений шрифт */
+}
+
+td {
+    background-color: #f9f9f9;
+    font-size: 14px; /* Зменшений шрифт */
+}
+
+td button {
+    background-color: transparent;
+    border: none;
+    color: red;
+    cursor: pointer;
+    font-size: 14px; /* Зменшений шрифт */
+}
+
+td button:hover {
+    color: darkred;
+}
+
+canvas {
+    border: 2px solid #ddd;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#summary {
+    text-align: center;
+    margin: 20px 0;
+    color: #555;
+}
